@@ -1,24 +1,122 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Card from "./components/Card";
 
 function App() {
+  let carddetails=[
+    {
+      type:'free',
+      price:'0',
+      features:[
+        {
+          user:'Single User',
+          muted:false
+        },
+        {
+          storage:'5GB Storage',
+          muted:false
+        },{
+          publicproject:'Unlimited Public Projects',
+          muted:false
+        },{
+          access:'Community Access',
+          muted:false
+        },{
+          privateproject:'Unlimited Private Projects',
+          muted:true
+        },{
+          phonesupport:'Dedicated Phone Support',
+          muted:true
+        },{
+          subdomain:'Free Subdomain',
+          muted:true
+        },{
+          status:'Monthly Status Reports',
+          muted:true
+        },
+      ]
+      
+    },
+    {
+      type:'plus',
+      price:'9',
+      features:[
+        {
+          user:'5 Users',
+          muted:false
+        },
+        {
+          storage:'50GB Storage',
+          muted:false
+        },{
+          publicproject:'Unlimited Public Projects',
+          muted:false
+        },{
+          access:'Community Access',
+          muted:false
+        },{
+          privateproject:'Unlimited Private Projects',
+          muted:false
+        },{
+          phonesupport:'Dedicated Phone Support',
+          muted:false
+        },{
+          subdomain:'Free Subdomain',
+          muted:false
+        },{
+          status:'Monthly Status Reports',
+          muted:true
+        },
+      ]
+      
+    },{
+      type:'pro',
+      price:'49',
+      features:[
+        {
+          user:'Unlimited User',
+          muted:false
+        },
+        {
+          storage:'150 GB Storage',
+          muted:false
+        },{
+          publicproject:'Unlimited Public Projects',
+          muted:false
+        },{
+          access:'Community Access',
+          muted:false
+        },{
+          privateproject:'Unlimited Private Projects',
+          muted:false
+        },{
+          phonesupport:'Dedicated Phone Support',
+          muted:false
+        },{
+          subdomain:'Free Subdomain',
+          muted:false
+        },{
+          status:'Monthly Status Reports',
+          muted:false
+        },
+      ] 
+    }  
+  ];
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section class="pricing py-5">
+        <div class="container">
+          <div class="row">
+            {
+              carddetails.map(card=>{
+                return <Card data={card}></Card>
+              })
+            }
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
